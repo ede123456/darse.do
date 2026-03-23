@@ -58,11 +58,11 @@ cd tiendaonline.luminastore
 
 ## GitHub Pages
 
-El proyecto esta listo para publicarse como sitio estatico. GitHub indica que Pages puede publicarse desde una rama y que el origen puede ser la raiz del repositorio. Para este caso, la configuracion recomendada es:
+El proyecto ya incluye un workflow en `.github/workflows/deploy-pages.yml` para desplegar automaticamente el sitio con GitHub Actions en cada push a `master`.
 
-- Source: `Deploy from a branch`
-- Branch: `master`
-- Folder: `/(root)`
+Configuracion recomendada en GitHub:
+
+- Source: `GitHub Actions`
 
 Tambien se incluye el archivo `.nojekyll` para evitar que GitHub Pages procese el sitio con Jekyll y publicar los archivos estaticos directamente.
 
