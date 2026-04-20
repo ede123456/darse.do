@@ -1,32 +1,77 @@
-# DarsePOS
+# DarseProv7 – Página Web de Facturación y Contabilidad 
 
-## Ejecutar el proyecto
+## Descripción
 
-```powershell
+Este proyecto corresponde al desarrollo de la página web **DARSE.pos**, una plataforma enfocada en servicios de **facturación y contabilidad**.
+El objetivo del sitio es presentar la solución, mostrar los planes disponibles y permitir que los usuarios puedan contactar o acceder al sistema.
+
+El diseño está inspirado en plataformas modernas de software empresarial y fue desarrollado con un enfoque **responsive**, para funcionar correctamente en computadoras, tablets y teléfonos móviles.
+
+## 🌐 Sitio Web
+
+Puedes ver la página publicada aquí:
+**https://darse.do**
+
+## Características
+
+* Diseño moderno y limpio
+* Interfaz responsive (compatible con dispositivos móviles)
+* Secciones principales:
+
+  * Inicio
+  * Planes
+  * Contacto
+  * Botón de ingresar
+* Enlaces a redes sociales y contacto directo
+
+## Inspiración de diseño
+
+Las siguientes páginas sirvieron como referencia visual y de estructura:
+
+* https://darse.do
+* https://alegra.com/rdominicana/
+* https://www.enemesys.com/
+
+## Tecnologías utilizadas
+
+* HTML
+* CSS
+* JavaScript
+* Nuxt.js v4
+* Git
+* GitHub
+
+## Instalación del proyecto
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/TU-USUARIO/NOMBRE-DEL-REPOSITORIO.git
+```
+
+Entrar al proyecto:
+
+```bash
+cd NOMBRE-DEL-REPOSITORIO
+```
+
+Instalar dependencias:
+
+```bash
 npm install
+```
+
+Ejecutar el servidor de desarrollo:
+
+```bash
 npm run dev
 ```
 
-Abre `http://localhost:3000`.
+## Objetivo del proyecto
 
-## Formulario de contacto
+El propósito de este proyecto es crear una página web moderna para presentar una solución de **facturación y contabilidad**, facilitando la comunicación con clientes potenciales y ofreciendo información clara sobre los servicios.
 
-El formulario ya esta conectado a una API interna de Nuxt y envia correos a `info@darse.do`.
+## Autor
 
-Antes de usarlo en produccion, crea un archivo `.env` basado en `.env.example` y completa estos valores:
-
-```env
-NUXT_SMTP_HOST=
-NUXT_SMTP_PORT=587
-NUXT_SMTP_USER=
-NUXT_SMTP_PASS=
-NUXT_SMTP_SECURE=false
-NUXT_CONTACT_TO_EMAIL=info@darse.do
-NUXT_CONTACT_FROM_EMAIL=
-```
-
-Notas:
-
-- `NUXT_CONTACT_TO_EMAIL` ya apunta a `info@darse.do`.
-- `NUXT_CONTACT_FROM_EMAIL` debe ser un correo valido permitido por tu servidor SMTP.
-- Si el SMTP no esta configurado, el formulario mostrara un mensaje indicando que falta la configuracion del servidor.
+**Edeny Mariely Morales Rojas**
+Estudiante de desarrollo web
