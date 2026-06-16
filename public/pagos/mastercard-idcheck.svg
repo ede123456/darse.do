@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 66" role="img" aria-label="Mastercard ID Check">
+  <defs><clipPath id="mcIdRight"><circle cx="51" cy="18" r="15"/></clipPath></defs>
+  <circle cx="39" cy="18" r="15" fill="#EB001B"/>
+  <circle cx="51" cy="18" r="15" fill="#F79E1B"/>
+  <circle cx="39" cy="18" r="15" fill="#FF5F00" clip-path="url(#mcIdRight)"/>
+  <text x="45" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="0.2" fill="#1A1A1A">mastercard</text>
+  <text x="45" y="62" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#1A1A1A">ID Check</text>
+</svg>

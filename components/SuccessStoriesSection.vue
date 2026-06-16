@@ -10,7 +10,7 @@
       </div>
 
       <div class="success-visual reveal">
-        <img src="/casos-exito.png" alt="Logos de empresas que utilizan DARSEPRO">
+        <img loading="lazy" decoding="async" src="/casos-exito.webp" alt="Logos de empresas que utilizan DARSEPRO">
       </div>
     </div>
   </section>

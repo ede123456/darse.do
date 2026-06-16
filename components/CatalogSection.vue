@@ -32,10 +32,10 @@
         <div class="catalog-showcase reveal">
           <div class="catalog-visual">
             <div class="visual-panel visual-panel-featured">
-              <img src="/catalogo/catalogo-phone-1.png" alt="Catalogo digital con ofertas, categorias y productos">
+              <img loading="lazy" decoding="async" src="/catalogo/catalogo-phone-1.webp" alt="Catalogo digital con ofertas, categorias y productos">
             </div>
             <div class="visual-panel visual-panel-secondary">
-              <img src="/catalogo/catalogo-phone-2.png" alt="Catalogo digital personalizado por categorias">
+              <img loading="lazy" decoding="async" src="/catalogo/catalogo-phone-2.webp" alt="Catalogo digital personalizado por categorias">
             </div>
           </div>
           <div class="catalog-notes">

@@ -19,7 +19,7 @@
             </div>
 
             <div class="reservations-visual">
-              <img src="/reservaciones/reservacion-phone.png" alt="Pantalla del modulo de reservaciones con fechas y servicios disponibles">
+              <img loading="lazy" decoding="async" src="/reservaciones/reservacion-phone.webp" alt="Pantalla del modulo de reservaciones con fechas y servicios disponibles">
               <div class="reservation-note note-availability">
                 <strong>Disponibilidad clara</strong>
                 <span>Fechas, servicios y reserva en un solo flujo</span>

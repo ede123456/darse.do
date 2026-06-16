@@ -2,7 +2,7 @@
   <section id="rrhh" class="section-shell hr-shell">
     <div class="container">
       <div class="hr-banner reveal">
-        <img src="/rrhh/rrhh-facial.png" alt="Reconocimiento facial para control de asistencia">
+        <img loading="lazy" decoding="async" src="/rrhh/rrhh-facial.webp" alt="Reconocimiento facial para control de asistencia">
         <div class="hr-banner-note">
           <strong>Control de asistencia</strong>
           <span>Con reconocimiento facial</span>
@@ -36,10 +36,10 @@
         <div class="hr-visual reveal">
           <div class="hr-stage">
             <div class="hr-panel hr-panel-wide">
-              <img src="/rrhh/rrhh-payroll.png" alt="Generar nomina en el modulo de recursos humanos">
+              <img loading="lazy" decoding="async" src="/rrhh/rrhh-payroll.webp" alt="Generar nomina en el modulo de recursos humanos">
             </div>
             <div class="hr-panel hr-panel-wide">
-              <img src="/rrhh/rrhh-attendance.png" alt="Control de asistencia en el modulo de recursos humanos">
+              <img loading="lazy" decoding="async" src="/rrhh/rrhh-attendance.webp" alt="Control de asistencia en el modulo de recursos humanos">
             </div>
 
             <div class="hr-note note-payroll">

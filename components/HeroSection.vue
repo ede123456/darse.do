@@ -3,10 +3,10 @@
     <div class="container hero-wrap">
       <div class="hero-gallery reveal">
         <div class="device-shell shell-phone">
-          <img class="device device-phone" src="/hero-design/hero-phone-new.png" alt="Vista movil del panel de ganancias">
+          <img class="device device-phone" src="/hero-design/hero-phone-new.webp" alt="Vista movil del panel de ganancias">
         </div>
         <div class="device-shell shell-tablet">
-          <img class="device device-tablet" src="/hero-design/hero-tablet-new.png" alt="Vista de punto de venta en tablet">
+          <img class="device device-tablet" src="/hero-design/hero-tablet-new.webp" alt="Vista de punto de venta en tablet">
         </div>
       </div>
       <p class="hero-product-name reveal">DarsePro v7</p>

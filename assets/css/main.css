@@ -58,6 +58,89 @@ img {
   padding: 4.5rem 0;
 }
 
+/* Paginas legales */
+.legal {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 0 2rem;
+}
+
+.legal h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+
+.legal h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.25rem;
+  margin: 2.2rem 0 0.6rem;
+}
+
+.legal p,
+.legal li {
+  color: var(--color-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.legal ul {
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.legal a {
+  color: var(--color-green-deep);
+  text-decoration: underline;
+}
+
+.legal strong {
+  color: var(--color-text);
+}
+
+.legal-updated {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin: 0 0 2rem;
+}
+
+.ds-badges {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 1.8rem;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+}
+
+.ds-badges img {
+  width: auto;
+}
+
+.ds-badges img[alt="Verified by Visa"] {
+  height: 40px;
+}
+
+.ds-badges img[alt="Mastercard ID Check"] {
+  height: 54px;
+}
+
+.legal-note {
+  margin: 0 0 1.6rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 14px;
+  background: #fff6d6;
+  border: 1px solid #f3e2a0;
+  color: #7a5b00 !important;
+  font-size: 0.92rem;
+}
+
 .eyebrow {
   margin: 0 0 0.75rem;
   color: var(--color-green-deep);

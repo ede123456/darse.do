@@ -13,7 +13,9 @@
         <article v-for="plan in plans" :key="plan.name" class="plan-card" :class="{ featured: plan.featured }">
           <p class="plan-label">{{ plan.label }}</p>
           <h3>{{ plan.name }}</h3>
-          <p class="plan-price">{{ plan.price }}<span>/mes</span></p>
+          <p v-if="plan.usd" class="plan-price">RD$ {{ formatRd(plan.usd) }}<span>/mes</span></p>
+          <p v-else class="plan-price">{{ plan.price }}</p>
+          <p v-if="plan.usd" class="plan-price-usd">&asymp; USD {{ plan.usd.toFixed(2) }}</p>
           <p class="plan-copy">{{ plan.description }}</p>
           <ul>
             <li v-for="feature in visibleFeatures(plan)" :key="feature">{{ feature }}</li>
@@ -36,14 +38,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+const empresa = useEmpresa()
 const collapsedFeatureCount = 4
 const expandedPlans = ref<string[]>([])
+
+const formatRd = (usd: number) =>
+  Math.round(usd * empresa.tasaUsd).toLocaleString('es-DO')
 
 const plans = [
   {
     label: 'Ideal para empezar',
     name: 'Emprendedor',
-    price: 'USD 16.00',
+    usd: 16.00,
     description: 'Pensado para pequenos negocios o emprendedores que necesitan ordenar ingresos y ventas.',
     features: ['Registro de ingresos y ventas', '1 usuario', 'Gestion basica de clientes', 'Reportes esenciales', 'Acceso en la nube', 'Soporte basico', 'Entrenamiento remoto'],
     featured: false
@@ -51,7 +57,7 @@ const plans = [
   {
     label: 'Mas elegido',
     name: 'Basico',
-    price: 'USD 33.75',
+    usd: 33.75,
     description: 'Para negocios en crecimiento que necesitan mas control y facturacion electronica ilimitada.',
     features: ['Facturacion electronica ilimitada', 'Registro de ingresos y ventas', '2 usuarios', 'Gestion de clientes y productos', 'Control de inventario basico', 'Reportes de ventas y finanzas', 'Acceso en la nube', 'Soporte prioritario', 'Entrenamiento remoto'],
     featured: true
@@ -59,7 +65,7 @@ const plans = [
   {
     label: 'Control completo',
     name: 'Pro',
-    price: 'USD 67.50',
+    usd: 67.50,
     description: 'Orientado a empresas que buscan automatizacion, modulos avanzados y una operacion mas robusta.',
     features: ['Facturacion electronica ilimitada', 'Registro de ingresos y ventas', '4 usuarios', 'Gestion avanzada de clientes y productos', 'Control completo de inventario', 'Modulo de ventas POS', 'Reportes financieros avanzados', 'Acceso desde cualquier dispositivo', 'Soporte preferencial', 'Entrenamiento remoto personalizado', 'Incluye recursos humanos', 'Incluye reservaciones'],
     featured: false
@@ -96,6 +102,7 @@ const visibleFeatures = (plan: { name: string; features: string[] }) => {
 .plan-card h3 { margin: .85rem 0 0; font-size: 1.45rem; }
 .plan-price { margin: .85rem 0 0; font-family: 'Sora', sans-serif; font-size: 2.15rem; }
 .plan-price span { font-size: 1rem; opacity: .72; }
+.plan-price-usd { margin: .15rem 0 0; font-size: .85rem; color: var(--color-muted); }
 .plan-copy { margin: .85rem 0 1.2rem; opacity: .8; line-height: 1.65; font-size: .97rem; }
 .plan-card ul { display: grid; gap: .78rem; padding: 0; margin: 0 0 1.45rem; list-style: none; }
 .plan-card li { position: relative; padding-left: 1.45rem; line-height: 1.52; font-size: .95rem; }

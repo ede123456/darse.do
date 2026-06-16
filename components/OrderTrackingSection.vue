@@ -27,7 +27,7 @@
 
         <div class="tracking-visual reveal">
           <div class="tracking-panel">
-            <img src="/seguimiento-pedidos.png" alt="Modulo de seguimiento de pedidos con estados y areas de produccion">
+            <img loading="lazy" decoding="async" src="/seguimiento-pedidos.webp" alt="Modulo de seguimiento de pedidos con estados y areas de produccion">
             <div class="tracking-note note-status">
               <strong>Estados en tiempo real</strong>
               <span>Pendiente, proceso, listo y despachado con total visibilidad</span>
