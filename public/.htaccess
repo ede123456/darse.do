@@ -1,0 +1,58 @@
+# Reglas para el Apache del hosting donde vive darse.do (200.58.112.174).
+# Va en public/ para que nuxi generate lo copie a la raiz del sitio.
+
+# --- Cache ---------------------------------------------------------------
+# El HTML NO se guarda: es lo unico que cambia de nombre al desplegar, asi que
+# si el navegador lo cachea, el visitante sigue viendo la version vieja aunque
+# ya hayamos subido la nueva (nos paso el 30 sep 2026).
+# Los archivos de _nuxt/ llevan el hash en el nombre, por eso pueden guardarse
+# un ano: al cambiar el contenido cambia la URL.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "^_payload\.json$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 day"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# --- Tipos que algunos Apache viejos no conocen --------------------------
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
+
+# --- Compresion ----------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+    application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Rutas ---------------------------------------------------------------
+# El sitio es estatico y cada pagina existe como carpeta con su index.html
+# (/terminos/index.html, /privacidad/index.html...). Lo que no exista cae en
+# 404.html, la pagina de error que genera Nuxt.
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Fuerza HTTPS (el hosting ya tiene el certificado).
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>

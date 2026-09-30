@@ -21,39 +21,41 @@
         </button>
       </div>
 
-      <article v-if="app" class="ficha reveal" :style="estilo(app)">
-        <header class="ficha-cab">
-          <span class="app-ico" v-html="app.icono" />
-          <div>
-            <h2>{{ app.nombre }}</h2>
-            <p class="dom">
-              <template v-if="app.dominio">{{ app.dominio }} &middot; </template>{{ app.para }}
-            </p>
-          </div>
-          <a class="btn ficha-btn" :href="app.ancla">Ver la app completa</a>
-        </header>
-
-        <div class="ficha-grid">
-          <div>
-            <h3>{{ app.titular }}</h3>
-            <div class="mod">
-              <span v-for="m in app.modulos" :key="m">{{ m }}</span>
+      <div ref="ranura">
+        <article v-if="app" class="ficha reveal" :style="estilo(app)">
+          <header class="ficha-cab">
+            <span class="app-ico" v-html="app.icono" />
+            <div>
+              <h2>{{ app.nombre }}</h2>
+              <p class="dom">
+                <template v-if="app.dominio">{{ app.dominio }} &middot; </template>{{ app.para }}
+              </p>
             </div>
-            <ul>
-              <li v-for="p in app.puntos" :key="p">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 17.5-5-5 1.4-1.4 3.6 3.6 8.1-8.1L19 8Z" /></svg>
-                {{ p }}
-              </li>
-            </ul>
-            <p class="incluye">
-              Incluye ademas el <strong>nucleo de Darse Pro</strong>: facturacion e-CF, inventario, cobros y reportes.
-            </p>
+            <a class="btn ficha-btn" :href="app.ancla">Ver la app completa</a>
+          </header>
+
+          <div class="ficha-grid">
+            <div>
+              <h3>{{ app.titular }}</h3>
+              <div class="mod">
+                <span v-for="m in app.modulos" :key="m">{{ m }}</span>
+              </div>
+              <ul>
+                <li v-for="p in app.puntos" :key="p">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 17.5-5-5 1.4-1.4 3.6 3.6 8.1-8.1L19 8Z" /></svg>
+                  {{ p }}
+                </li>
+              </ul>
+              <p class="incluye">
+                Incluye ademas el <strong>nucleo de Darse Pro</strong>: facturacion e-CF, inventario, cobros y reportes.
+              </p>
+            </div>
+            <div class="shot">
+              <img loading="lazy" decoding="async" :src="app.imagen" :alt="app.imagenAlt">
+            </div>
           </div>
-          <div class="shot">
-            <img loading="lazy" decoding="async" :src="app.imagen" :alt="app.imagenAlt">
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </section>
 </template>
@@ -69,8 +71,14 @@ const estilo = (a: typeof apps[number]) => ({
   '--ac-hondo': a.colorHondo
 })
 
-const elegir = (clave: string) => {
+const ranura = ref<HTMLElement | null>(null)
+
+const elegir = async (clave: string) => {
   elegida.value = clave
+  await nextTick()
+  // Que la ficha quede donde la dejaria un enlace del menu: scrollIntoView
+  // respeta el scroll-padding-top del html, o sea debajo del header pegajoso.
+  ranura.value?.scrollIntoView({ block: 'start' })
 }
 </script>
 
