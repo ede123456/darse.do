@@ -18,10 +18,18 @@
 
       <div class="nav-links" :class="{ open: isOpen }">
         <a href="#inicio" @click="isOpen = false">Inicio</a>
-        <a href="#catalogo-digital" @click="isOpen = false">Catalogo digital</a>
-        <a href="#reservaciones" @click="isOpen = false">Reservaciones</a>
-        <a href="#rrhh" @click="isOpen = false">RRHH</a>
-        <a href="#seguimiento-pedidos" @click="isOpen = false">Pedidos</a>
+        <a
+          v-for="app in apps"
+          :key="app.clave"
+          :href="app.ancla"
+          class="nav-app"
+          :style="{ '--ac': app.color }"
+          @click="isOpen = false"
+        >
+          <i class="nav-punto" />{{ app.nombre.replace('Darse Pro ', '') }}
+        </a>
+        <a href="#quierodo" @click="isOpen = false">Quiero.do</a>
+        <a href="#nucleo" @click="isOpen = false">El sistema</a>
         <a href="#planes" @click="isOpen = false">Planes</a>
         <a href="#contacto" @click="isOpen = false">Contacto</a>
       </div>
@@ -30,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+const apps = usarApps()
 const isOpen = ref(false)
 const navElement = ref<HTMLElement | null>(null)
 
@@ -57,6 +66,8 @@ onBeforeUnmount(() => {
 .header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(18px); background: rgba(255,255,255,.72); border-bottom: 1px solid rgba(16,16,16,.04); }
 .navbar { display: flex; align-items: center; justify-content: space-between; gap: 0.9rem; min-height: 3.45rem; }
 .brand-logo { width: 30px; height: 30px; }
+.nav-app { display: inline-flex; align-items: center; gap: .35rem; }
+.nav-punto { width: 7px; height: 7px; border-radius: 50%; background: var(--ac); flex: 0 0 7px; }
 .nav-links { display: flex; align-items: center; gap: 0.9rem; }
 .nav-links a:not(.nav-cta) { position: relative; font-size: 0.88rem; font-weight: 400; color: rgba(16,16,16,.8); }
 .nav-links a:not(.nav-cta)::after { content: ''; position: absolute; left: 0; bottom: -0.35rem; width: 100%; height: 1px; background: var(--color-green); transform: scaleX(0); transition: transform .25s ease; }
@@ -68,5 +79,9 @@ onBeforeUnmount(() => {
   .nav-toggle { display: block; }
   .nav-links { position: absolute; top: calc(100% + .75rem); left: 1rem; right: 1rem; display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid rgba(16,16,16,.06); border-radius: 24px; background: rgba(255,255,255,.98); box-shadow: var(--shadow-soft); opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity .2s ease, transform .2s ease; }
   .nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  /* En telefono cada enlace es un blanco de dedo, no de puntero. */
+  .nav-links { gap: .25rem; }
+  .nav-links a { display: flex; align-items: center; min-height: 44px; padding: 0 .35rem; border-radius: 10px; }
+  .nav-links a:active { background: var(--color-green-soft); }
 }
 </style>

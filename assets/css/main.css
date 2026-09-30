@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* el header es sticky (56px): sin esto el ancla queda debajo de la barra */
+  scroll-padding-top: 4.5rem;
   background: var(--color-green-soft);
 }
 

@@ -12,14 +12,14 @@
       <p class="hero-product-name reveal">DarsePro v7</p>
 
       <div class="hero-copy reveal">
-        <p class="eyebrow">Sistema de facturacion para todos</p>
-        <h1>Rapido, simple y poderoso para vender mejor.</h1>
+        <p class="eyebrow">Sistema de facturacion y contabilidad</p>
+        <h1>Facturación <em>mas simple</em> mas contable.</h1>
         <p class="hero-text">
           Todo tu negocio conectado en una experiencia clara, moderna y pensada para moverse contigo.
         </p>
         <div class="hero-actions">
-          <a href="#planes" class="btn btn-primary">Ver planes</a>
-          <a href="#contacto" class="btn btn-secondary">Solicitar asesoria</a>
+          <a href="#rubros" class="btn btn-primary">Ver mi rubro</a>
+          <a href="#contacto" class="btn btn-secondary">Hablar con un asesor</a>
         </div>
       </div>
     </div>
@@ -27,6 +27,8 @@
 </template>
 
 <style scoped>
+.hero-copy h1 em { font-style: normal; color: var(--color-green-deep); }
+
 .hero {
   padding-top: 1.2rem;
 }

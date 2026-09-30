@@ -3,11 +3,14 @@
     <AppNavbar />
     <main>
       <HeroSection />
-      <ServicesSection />
-      <CatalogSection />
-      <ReservationsSection />
+      <AppsFamiliaSection />
+      <RestauranteSection />
+      <AppHermanaSection clave="salud" />
+      <AppHermanaSection clave="legal" />
+      <ComercioServiciosSection />
+      <QuieroDoSection />
+      <NucleoSection />
       <HumanResourcesSection />
-      <OrderTrackingSection />
       <PlansSection />
       <ContactSection />
       <SuccessStoriesSection />
@@ -30,10 +33,12 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'DarsePOS | Sistema de facturacion para todos',
-  description: 'Sistema de facturacion para todo tipo de negocio, con planes estandar y personalizados.',
-  ogTitle: 'DarsePOS',
-  ogDescription: 'Planes de suscripcion rapidos, simples y poderosos para emprendedores y pequenas empresas.',
+  title: 'Darse Pro | Una aplicacion para cada rubro',
+  description:
+    'Restaurante, comercio, clinica, bufete o servicios: Darse Pro viene en cinco versiones, cada una con lo que ese negocio necesita, y todas facturan con comprobante fiscal electronico.',
+  ogTitle: 'Darse Pro | Una aplicacion para cada rubro',
+  ogDescription:
+    'Cinco apps, un solo sistema: mesas y comandas, punto de venta, agenda de pacientes, expedientes del bufete y rutas de entrega, con facturacion e-CF.',
   ogType: 'website'
 })
 
